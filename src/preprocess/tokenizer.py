@@ -36,7 +36,4 @@ class TextPreprocessor:
 
 if __name__ == '__main__':
     text_processor = TextPreprocessor()
-    token_sentences = text_processor.tokenize_sentence("")
-    for t_sentence in token_sentences:
-        token_words = text_processor.tokenize_word(sample=t_sentence.text)
-        print(token_words)
+    token_sentences = text_processor.tokenize_word("trader")
