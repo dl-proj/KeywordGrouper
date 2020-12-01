@@ -3,14 +3,14 @@ import pandas as pd
 
 from src.preprocess.tokenizer import TextPreprocessor
 from utils.folder_file_manager import save_file
-from settings import KEYWORD_CSV, CORPUS_PATH
+from settings import KEYWORD_CSV_FILE_PATH, CORPUS_PATH
 
 
 def create_corpus():
 
     text_preprocessor = TextPreprocessor()
 
-    keyword_df = pd.read_csv(KEYWORD_CSV)
+    keyword_df = pd.read_csv(KEYWORD_CSV_FILE_PATH)
     keywords = keyword_df["Keyword"].values.tolist()
     word_freq = {}
 

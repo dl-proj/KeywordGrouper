@@ -3,7 +3,7 @@ import pandas as pd
 
 from sklearn.metrics.pairwise import cosine_similarity
 from src.preprocess.tokenizer import TextPreprocessor
-from settings import CORPUS_PATH, KEYWORD_CSV, GROUP_KEYS, GROUPED_KEYWORDS_CSV, SPACING_CHECK, SPELL_CHECK
+from settings import CORPUS_PATH, KEYWORD_CSV_FILE_PATH, GROUP_KEYS, GROUPED_KEYWORDS_CSV, SPACING_CHECK, SPELL_CHECK
 
 
 class KeywordGrouper:
@@ -32,7 +32,7 @@ class KeywordGrouper:
 
     def group_keywords(self, group_category, output_file_path):
         self.__get_group_key_feature(group_category=group_category)
-        info_df = pd.read_csv(KEYWORD_CSV)
+        info_df = pd.read_csv(KEYWORD_CSV_FILE_PATH)
         keywords = info_df["Keyword"].values.tolist()
         categories = []
         for keyword in keywords:
